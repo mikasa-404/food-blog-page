@@ -16,20 +16,21 @@ import img4 from "../assets/girl (lp).png";
 const Home = () => {
   return (
     <Box>
-      <Flex justify="space-between" textAlign={"left"}>
+      <Flex flexDirection={{base:"column-reverse", md:"row"}} textAlign={{base:"center",md:"left"}} justifyContent={{base:"start", md:"space-between"}}>
         <Box
           position="relative"
-          marginLeft="100px"
-          marginTop="33px"
-          width="400px"
+          margin={0}
+          marginLeft={{ md:"6.25em"}}
+          marginX={{base:"auto"}}
+          marginTop={{base:"3.94em",md:"2.06em"}}
+          width={{base:"15em",md:"25em"}}
         >
-          <Image src={img3} height="83px" width="107px" />
+          <Image src={img3} height="83px" width="107px" display={{ base: "none", md: "block" }} />
 
           <Heading
-            marginTop="111px"
-            textAlign="left"
-            fontSize="62px"
-            lineHeight="69px"
+            marginTop={{base:"75px",md:"111px"}}
+            fontSize={{base:"2.38rem", md:"3.88rem"}}
+            lineHeight={{base:"2.88rem", md:"4.31rem"}}
             fontWeight={700}
             padding={0}
             width="100%"
@@ -43,10 +44,10 @@ const Home = () => {
           </Heading>
 
           <Text
-            marginTop="26px"
+            marginTop={{base:"1.31em",md:"1.69em"}}
             fontWeight="400"
-            fontSize="16.44px"
-            lineHeight="27.41px"
+            fontSize={{base:"0.7rem",md:"1.03rem"}}
+            lineHeight={{base:"1.31em", md:"1.69em"}}
             color="#444957"
           >
             Naturally made Healthcare Products for the better care & support of
@@ -56,11 +57,11 @@ const Home = () => {
             color="white"
             backgroundColor="#E23744"
             variant="solid"
-            borderRadius="34px"
-            padding="14px 34px"
-            marginTop="41px"
-            fontSize="16px"
-            lineHeight="36px"
+            borderRadius={{base:"1.88em",md:"2.13em"}}
+            padding={{base:"0.75em 1.88em",md:"0.88em 2.13em"}}
+            marginTop={{base:"1.75em",md:"2.56em"}}
+            fontSize={{base:"0.77rem",md:"1.13rem"}}
+            lineHeight={{base:"2em",md:"2.25em"}}
             fontWeight={600}
           >
             Explore Now
@@ -72,15 +73,15 @@ const Home = () => {
           <Image
             src={img1}
             alt="food-bg"
-            height="805px"
-            maxW="735px"
+            width={{base:"23.63em", md:"45.94em"}}
+            height={{ base:"25.88em",md:"50.25em"}}
             margin={0}
           />
           <Image
             src={img2}
             alt="Overlay Image"
-            width="762px"
-            height="839px"
+            width={{base:"23.44em",md:"47.63em"}}
+            height={{base:"26.63em",md:"52.44em"}}
             position="absolute"
             top="0"
             right={0}
@@ -89,17 +90,19 @@ const Home = () => {
             color="#FFFFFF"
             variant="outline"
             position="absolute"
-            borderRadius="21px"
-            padding="3px 20px"
-            top="32px"
-            right="41px"
-            fontSize="16px"
-            lineHeight="36px"
+            borderRadius={{base:"1.31rem"}}
+            padding={{base:"0.25em 2.06em",md:"0.19em 1.25em"}}
+            top={{base:"1.13em",md:"2em"}}
+            right={{base:"1.16em",md:"2.56em"}}
+            fontSize={{base:"0.69em",md:"1rem"}}
+            lineHeight={{base:"2.88em",md:"2.25rem"}}
             fontWeight={600}
           >
             Get in Touch
           </Button>
         </Box>
+        
+        {/* about section */}
       </Flex>
       <Flex
         align="center"
