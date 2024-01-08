@@ -101,9 +101,10 @@ const Home = () => {
             Get in Touch
           </Button>
         </Box>
-        
-        {/* about section */}
+
       </Flex>
+
+      {/* about section */}
       <Flex
         align="center"
         justify="space-between"
