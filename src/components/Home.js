@@ -108,7 +108,14 @@ const Home = () => {
         marginTop="186px"
       >
         <Image src={img4} height="468px" width="384px" marginLeft="205px" />
-        <Flex flexDirection="column" marginRight="205px" marginX="107px" marginLeft="200px" width="447px" textAlign={"left"}>
+        <Flex
+          flexDirection="column"
+          marginRight="205px"
+          marginX="107px"
+          marginLeft="200px"
+          width="447px"
+          textAlign={"left"}
+        >
           <Text
             fontSize="45px"
             lineHeight="27px"
@@ -118,7 +125,13 @@ const Home = () => {
           >
             About Us
           </Text>
-          <Text fontSize="15px" fontWeight="400" lineHeight="27px" marginTop="27.41px" color="#444957">
+          <Text
+            fontSize="15px"
+            fontWeight="400"
+            lineHeight="27px"
+            marginTop="27.41px"
+            color="#444957"
+          >
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
