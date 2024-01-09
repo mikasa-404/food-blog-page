@@ -12,6 +12,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick'
 import { FaChevronRight } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa6";
+import { useBreakpointValue } from '@chakra-ui/react'
 
 
 
@@ -39,23 +40,29 @@ const data=[
   },
 ]
 const BlogCard=({imageUrl, heading})=>{
+  const data=useBreakpointValue({
+    md:"PLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard...",
+    base:"PLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley....",
+  })
   return(
-    <Card  maxW="381px" border="2px" m="0" borderColor="rgba(147, 162, 211, 0.38)" borderRadius="21px">
+    <Card width={{base:"271px",md:"381px"}} border="1px" borderColor={{base:"#373737",md:"rgba(147, 162, 211, 0.38)"}} borderRadius={{base:"27px",md:"21px"}}>
     <CardBody>
-      <Image m="27px" src={imageUrl} alt="card-img" borderRadius="21px"/>  
-      <Flex margin="42px 40px" flexDirection={"column"} textAlign="left">
-      <Heading fontWeight={700} fontSize={"21px"} lineHeight={"27px"} color={"#0E2368"}>{heading}</Heading>
-      <Text marginTop="14px" fontWeight={400} fontSize={"15px"} lineHeight={"27px"} color="#444957">PLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard...</Text>
+      <Image m={{base:"33px",md:"27px"}} src={imageUrl} alt="card-img" borderRadius={{base:"27px",md:"21px"}} width={{base:"204px",md:"326px"}}/>  
+      <Flex margin={{base:"39px 20px",md:"42px 40px"}} flexDirection={"column"} textAlign={{base:"center",md:"left"}}>
+      <Heading fontWeight={700} fontSize={{base:"16px",md:"21px"}} lineHeight={{base:"35px",md:"27px"}} color={"#0E2368"}>{heading}</Heading>
+      <Text marginTop={{base:"6px",md:"14px"}} fontWeight={400} fontSize={{base:"12px",md:"15px"}} lineHeight={{base:"22px",md:"27px"}} color="#444957">{data}</Text>
       <Button
-          color="#424961"
+          margin={"auto"}
+          color={{base:"#373737",md:"#424961"}}
           variant="outline"
-          borderRadius="21px"
-          padding="3px 26px"
-          fontSize="16.44px"
-          lineHeight="35.59px"
+          borderRadius={{base:"27px",md:"21px"}}
+          padding={{base:"4px 33px",md:"3px 26px"}}
+          fontSize={{base:"11px",md:"16.44px"}}
+          lineHeight={{base:"46px",md:"35.59px"}}
           fontWeight={600}
-          marginRight={"164px"}
-          marginTop={"27.41px"}
+          marginRight={{md:"164px"}}
+          marginTop={{base:"26px",md:"27.41px"}}
+          width={{base:"118px"}}
         >
           Read More
         </Button>
@@ -65,25 +72,36 @@ const BlogCard=({imageUrl, heading})=>{
   )
 }
 const Articles = () => {
-  const settings = {
+  const mediumSettings = {
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
   };
+  const baseSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  const settings = useBreakpointValue({
+    base: baseSettings,
+    md: mediumSettings,
+  });
   const slider = React.useRef(null);
   const [currentSlide, setCurrentSlide]=useState(1)
   return (
-    <Box margin={"108px"} mt="158px" mb="64px">
+    <Box margin={{base:"52px",md:"108px"}} mt={{base:"132px",md:"158px"}} mb={{base:"31px",md:"64px"}}>
       <Heading
       fontWeight={600}
-      fontSize={"56px"}
-      lineHeight={"42px"}
+      fontSize={{base:"28px",md:"56px"}}
+      lineHeight={{base:"54px",md:"42px"}}
       color="#0E2368"
-      mt="158px"
-      mb="41px"
+      mb={{base:"23px",md:"41px"}}
       >Latest Articles</Heading>
+
       <Slider  ref={slider} {...settings} >
       {data.map((card, index) => (
         <Box key={index}>
