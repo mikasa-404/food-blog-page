@@ -63,7 +63,7 @@ const Footer = () => {
           <Heading
           fontSize="18.84px"
           fontWeight={600}
-          lineHeight="27.22px"
+          lineHeight={{base:"35px",md:"27.22px"}}
           color="#0E2368"
           width="129px"
           >Social Links</Heading>
