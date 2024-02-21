@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Flex,
-  Spacer,
   Box,
   Text,
   Image,
@@ -51,7 +50,8 @@ const Home = () => {
             <Text as="span" color="#E23744">
               Best
             </Text>{" "}
-            Food and Drinks
+            Drinksssss!!!
+
           </Heading>
 
           <Text
